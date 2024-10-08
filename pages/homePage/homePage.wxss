@@ -1,0 +1,79 @@
+/* 搜索框样式 */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* 确保内边距不会增加输入框的总宽度 */
+}
+
+/* "+"按钮样式 */
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #0ba360;
+  color: #fff;
+  border-radius: 25px; /* 圆形按钮 */
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* 分类栏样式 */
+.category-section {
+  display: flex;
+  overflow-x: auto;
+  margin: 10px;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+.category-row {
+  display: flex;
+}
+
+.category-item {
+  padding: 10px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+/* 项目栏样式 */
+.project-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: space-around;
+}
+
+.project-item {
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+.project-square {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* 正方形的关键 */
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 展开/收起按钮样式 */
+.toggle-all {
+  padding: 10px;
+  text-align: center;
+  background-color: #f8f8f8;
+  margin: 10px;
+}

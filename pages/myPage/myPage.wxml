@@ -1,0 +1,27 @@
+<view class="user-info">
+  <view class="avatar">
+    <image class="avatar-image" src="/images/default-avatar.png" mode="aspectFill"/>
+  </view>
+  <view class="personal-details">
+    <view class="student-id">学号: 123456</view>
+    <view class="name">姓名: 张三</view>
+    <view class="major">专业: 计算机科学与技术</view>
+  </view>
+</view>
+
+<view class="contact-info">
+  <view class="phone">电话: 123-4567-8901</view>
+  <view class="email">邮箱: zhangsan@example.com</view>
+  <view class="bio">个人简介: 这里可以写个人简介</view>
+</view>
+
+<view class="projects-participated">参加项目: 项目A, 项目B</view>
+
+<view class="my-page">
+  <!-- 其他用户信息 -->
+
+  <!-- 设置按钮 -->
+  <view class="settings-btn" bindtap="goToSettings">
+    <button>设置</button>
+  </view>
+</view>

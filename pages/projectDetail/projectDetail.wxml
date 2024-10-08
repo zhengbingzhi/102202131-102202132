@@ -1,0 +1,14 @@
+<view class="project-detail">
+  <view class="project-title">{{project.title}}</view>
+  <view class="project-type">{{project.type}}</view>
+  <view class="involved-majors">{{project.majors}}</view>
+  <view class="schedule">
+    <picker mode="selector" range="{{scheduleOptions}}" bindchange="onScheduleChange">{{project.schedule}}</picker>
+  </view>
+  <view class="contact-info">{{project.contact}}</view>
+  <view class="member-requirements">{{project.requirements}}</view>
+  <view class="project-introduction">{{project.introduction}}</view>
+  
+  <button class="discussion-btn" bindtap="goToDiscussion">讨论区</button>
+  <button class="join-btn" bindtap="applyToJoin">申请加入</button>
+</view>

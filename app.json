@@ -1,15 +1,39 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/loginRegisterPage/loginRegisterPage",
+    "pages/mainPage/mainPage",
+    "pages/homePage/homePage",
+    "pages/messagePage/messagePage",
+    "pages/myPage/myPage",
+    "pages/projectDetail/projectDetail",
+    "pages/addProject/addProject",
+    "pages/chatPage/chatPage" ,
+    "pages/discussionArea/discussionArea" ,
+    "pages/settings/settings"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTitleText": "你的小程序名称"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/homePage/homePage",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/messagePage/messagePage",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/myPage/myPage",
+        "text": "我的"
+      }
+    ],
+    "color": "#000",
+    "selectedColor": "#0ba360",
+    "backgroundColor": "#fff",
+    "borderStyle": "black"
   },
   "style": "v2",
-  "componentFramework": "glass-easel",
-  "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "sitemapLocation": "sitemap.json"
 }

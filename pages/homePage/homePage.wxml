@@ -1,0 +1,31 @@
+<!-- 搜索框 -->
+<view class="search-bar">
+  <input class="search-input" type="text" placeholder="搜索" bindinput="handleInput"/>
+  <view class="add-button" bindtap="goToAddProjectPage">+</view>
+</view>
+
+<!-- 部分分类栏 -->
+<view class="category-section">
+  <view class="category-row">
+    <view class="category-item" wx:for="{{visibleCategories}}" wx:key="{{index}}" bindtap="handleCategoryTap" data-category="{{item}}">
+      {{item}}
+    </view>
+  </view>
+</view>
+
+<!-- 展开/收起按钮 -->
+<view class="toggle-all" bindtap="toggleAllCategories">
+  {{showAllCategories ? '收起' : '展开全部'}}
+</view>
+
+<!-- 项目栏 -->
+<view class="project-section">
+  <view class="project-item" wx:for="{{projectItems}}" wx:key="{{index}}" bindtap="handleProjectTap" data-index="{{index}}">
+    <view class="project-square"></view>
+  </view>
+</view>
+
+<!-- 主页内容 -->
+<view class="content">
+  <!-- 这里是其他内容 -->
+</view>

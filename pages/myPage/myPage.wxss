@@ -1,0 +1,54 @@
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.avatar {
+  margin-right: 20px;
+}
+
+.avatar-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* 圆形 */
+  border: 1px solid #ddd; /* 边框 */
+}
+
+.personal-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-id, .name, .major {
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  padding: 20px;
+}
+
+.phone, .email, .bio {
+  margin-bottom: 10px;
+}
+
+.projects-participated {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+/* 其他样式 */
+
+.settings-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+}
+.settings-btn button {
+  background-color: #0ba360;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
