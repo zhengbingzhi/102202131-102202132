@@ -1,0 +1,9 @@
+<view class="settings">
+  <view class="setting-item">账户安全</view>
+  <view class="setting-item">登录提醒</view>
+  <view class="setting-item">个人隐私</view>
+  <view class="setting-item">公开与否</view>
+  <view class="setting-item">广告设置</view>
+  <view class="setting-item">收藏</view>
+  <!-- 更多设置项 -->
+</view>
