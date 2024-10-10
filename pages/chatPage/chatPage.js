@@ -1,6 +1,3 @@
-// 引入websocket.js文件
-const { connectSocket, sendSocketMessage, closeSocket } = require('../../utils/websocket.js');
-
 Page({
   data: {
     chatMessages: [],
@@ -13,18 +10,20 @@ Page({
     // 页面加载时的逻辑
     this.setData({
       userName: options.name,
-      userAvatar: options.avatar
+      userAvatar: options.avatar || '默认头像路径'
     });
     this.loadChatMessages();
-    // 连接 WebSocket
-    connectSocket();
   },
 
   loadChatMessages: function() {
     // 加载聊天消息的逻辑
     // 模拟数据
     this.setData({
-      chatMessages: ['你好', '请问你现在有空吗？', '我们需要讨论一下项目的事']
+      chatMessages: [
+        { from: 'other', text: '你好', avatar: '默认对方头像路径' },
+        { from: 'me', text: '你好，请问你现在有空吗？', avatar: this.data.userAvatar },
+        { from: 'other', text: '有空的，我们需要讨论一下项目的事', avatar: '默认对方头像路径' }
+      ]
     });
   },
 
@@ -39,20 +38,12 @@ Page({
   sendMessage: function() {
     const message = this.data.messageInput;
     if (message) {
+      const newMessage = { from: 'me', text: message, avatar: this.data.userAvatar };
+      const updatedMessages = [...this.data.chatMessages, newMessage];
       this.setData({
-        chatMessages: [...this.data.chatMessages, message],
+        chatMessages: updatedMessages,
         messageInput: '' // 清空输入框
       });
-      // 通过WebSocket发送消息
-      sendSocketMessage({
-        type: 'text',
-        content: message,
-      });
     }
-  },
-
-  onUnload: function() {
-    // 页面卸载时关闭 WebSocket 连接
-    closeSocket();
   }
 });
