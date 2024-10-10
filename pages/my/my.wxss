@@ -1,0 +1,71 @@
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.avatar {
+  margin-right: 20px;
+}
+
+.avatar-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* 圆形 */
+  border: 1px solid #ddd; /* 边框 */
+}
+
+.personal-details {
+  padding: 5px;
+  width: 90%;
+}
+
+.student-id, .name, .major {
+  display: flex;
+  box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
+  margin-bottom: 10px;
+}
+.personal-details view{
+  margin-left:10px;
+  width: 90%;
+}
+.personal-details text{
+  white-space: nowrap;
+}
+
+.contact-info {
+  padding: 5px;
+  width: 90%;
+}
+
+.phone, .email, .bio {
+  display: flex;
+  box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
+  margin-bottom: 10px;
+}
+.contact-info view,textarea{
+  margin-left:10px;
+}
+.contact-info text{
+  white-space: nowrap;
+}
+
+.projects-participated {
+  margin-left: 15px ;
+  width: 87.5%;
+  padding-bottom: 280px;
+  box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
+}
+/* 其他样式 */
+
+.settings-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+}
+.settings-btn image {
+  height: 20px;
+  width: 20px;
+}

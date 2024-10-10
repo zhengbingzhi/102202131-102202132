@@ -3,15 +3,27 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #f8f8f8;
+  background-color: #fff;
 }
 
 .search-input {
   flex: 1;
-  padding: 10px;
-  border-radius: 5px;
+  height: 30px;
+  padding-left: 20px;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  box-sizing: border-box; /* 确保内边距不会增加输入框的总宽度 */
+  background-color: rgb(211, 205, 205);
+}
+
+.image-style {
+  margin-left: 10px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.image-hover {
+  opacity: 0.7;
 }
 
 /* "+"按钮样式 */
@@ -19,33 +31,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: #0ba360;
   color: #fff;
-  border-radius: 25px; /* 圆形按钮 */
+  border-radius: 15px; /* 圆形按钮 */
   margin-left: 10px;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* 分类栏样式 */
-.category-section {
-  display: flex;
-  overflow-x: auto;
-  margin: 10px;
-  background-color: #f8f8f8;
-  padding: 10px;
-}
-
 .category-row {
   display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .category-item {
-  padding: 10px;
+  margin-left: 5px;
   margin-right: 10px;
-  white-space: nowrap;
+  padding: 5px 10px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.toggle-all {
+  padding: 5px 10px;
+  color: rgb(26, 163, 218);
+  cursor: pointer;
 }
 
 /* 项目栏样式 */
@@ -57,8 +76,10 @@
 }
 
 .project-item {
-  width: 20%;
-  margin-bottom: 10px;
+  width: 45%;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
 }
 
 .project-square {
@@ -70,10 +91,37 @@
   border-radius: 5px;
 }
 
-/* 展开/收起按钮样式 */
-.toggle-all {
-  padding: 10px;
+.project-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
   text-align: center;
-  background-color: #f8f8f8;
-  margin: 10px;
 }
+
+/* 无结果提示样式 */
+.no-results {
+  text-align: center;
+  margin-top: 20px;
+  color: #999;
+  font-size: 16px;
+}
+
+/* 主页内容样式 */
+.content {
+  padding: 10px;
+}
+
+/* 刷新按钮样式 */
+.refresh-image {
+  position: fixed; /* 固定位置 */
+  left: 10px;      /* 距离左侧10px */
+  bottom: 10px;    /* 距离底部10px */
+  width: 50px;     /* 图片宽度 */
+  height: 50px;    /* 图片高度 */
+  cursor: pointer; /* 鼠标悬停时显示为可点击 */
+}
+
