@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view class="discussion-container">
   <view class="discussion-content">
     <!-- 讨论内容 -->
@@ -9,4 +10,17 @@
     <input type="text" placeholder="输入讨论内容" bindinput="handleInput"/>
     <view class="send-button" bindtap="sendDiscussion">发送</view>
   </view>
+=======
+<view class="discussion-container">
+  <view class="discussion-content">
+    <!-- 讨论内容 -->
+    <block wx:for="{{discussions}}" wx:key="index">
+      <view class="discussion-item">{{item}}</view>
+    </block>
+  </view>
+  <view class="input-area">
+    <input type="text" placeholder="输入讨论内容" bindinput="handleInput"/>
+    <view class="send-button" bindtap="sendDiscussion">发送</view>
+  </view>
+>>>>>>> dc40d99 (Initial Commit)
 </view>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .settings {
   padding: 20px;
 }
@@ -7,4 +8,15 @@
   padding: 10px;
   background-color: #f0f0f0;
   border-radius: 5px;
+=======
+.settings {
+  padding: 20px;
+}
+
+.setting-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+>>>>>>> dc40d99 (Initial Commit)
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .forum-page {
   padding: 20px;
 }
@@ -69,3 +70,75 @@
   border: none;
   border-radius: 5px;
 }
+=======
+/* forum.wxss */
+.forum-page {
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.post-list {
+  margin-bottom: 20px;
+}
+
+.post-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.post-title {
+  font-size: 16px;
+  color: #333;
+}
+
+.post-content {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #999;
+}
+
+.input-area {
+  margin-bottom: 10px;
+}
+
+.input-field {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.send-btn {
+  background-color: #1AAD19;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.refresh-btn {
+  background-color: #576B95;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+>>>>>>> dc40d99 (Initial Commit)

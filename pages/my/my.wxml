@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view class="user-info">
   <view class="avatar">
     <image class="avatar-image" src="/images/default-avatar.png" mode="aspectFill"/>
@@ -44,3 +45,7 @@
     <image src = 'image/setting.jpg'></image>
   </view>
 </view>
+=======
+<!--pages/my/my.wxml-->
+<text>pages/my/my.wxml</text>
+>>>>>>> dc40d99 (Initial Commit)

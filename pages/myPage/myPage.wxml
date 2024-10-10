@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view class="user-info">
   <view class="avatar" wx:if="{{!isEditing}}">
     <image class="avatar-image" src="{{userInfo.avatar}}" mode="aspectFill" />
@@ -85,3 +86,51 @@
     </view>
   </view>
 </view>
+=======
+<view class="user-info">
+  <view class="avatar">
+    <image class="avatar-image" src="/images/default-avatar.png" mode="aspectFill"/>
+  </view>
+  <view class="personal-details">
+    <view class="student-id"> 
+      <text>学号</text>
+      <view >102202131</view>
+    </view>
+    <view class="name"> 
+      <text>姓名</text>
+      <view >张三</view>
+    </view>
+    <view class="major"> 
+      <text>专业</text>
+      <view >计算机科学与技术</view>
+    </view>
+  </view>
+</view>
+
+<view class="contact-info">
+<view class="phone"> 
+  <text>电话</text>
+  <view >123-4567-8901</view>
+</view>
+<view class="email">
+  <text>邮箱</text>
+  <view>zhangsan@example.com</view>
+</view>
+<view class = "bio">
+  <text>简介</text>
+  <view>性格外向活泼，可以跟大部分人聊得来，随和，能融洽的处理自己的交友关系，喜欢帮助别人，有团队合作精神，也有独立解决事情的性格，虽然平时比较不正紧，但对于重要的是，会严肃面对，不拖拉，不懈怠，唯一不足就是有点懒惰。</view>
+</view>
+
+</view>
+
+<view class="projects-participated">参加项目</view>
+
+<view class="my-page">
+  <!-- 其他用户信息 -->
+
+  <!-- 设置按钮 -->
+  <view class="settings-btn" bindtap="goToSettings">
+    <image src = 'image/setting.png'></image>
+  </view>
+</view>
+>>>>>>> dc40d99 (Initial Commit)

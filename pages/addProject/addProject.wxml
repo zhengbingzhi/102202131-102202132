@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view class="form-container">
   <view class="form-item">
     <text>项目名称：</text>
@@ -44,3 +45,38 @@
     <button bindtap="submitProject">提交项目申请</button>
   </view>
 </view>
+=======
+<view class="form-container">
+  <view class="form-item">
+    <text>项目名称：</text>
+    <input type="text" placeholder="请输入项目名称" bindinput="inputProjectName"/>
+  </view>
+  <view class="form-item">
+    <text>项目类型：</text>
+    <input type="text" placeholder="请输入项目类型" bindinput="inputProjectType"/>
+  </view>
+  <view class="form-item">
+    <text>所需专业：</text>
+    <input type="text" placeholder="请输入所需专业" bindinput="inputMajorsRequired"/>
+  </view>
+  <view class="form-item">
+    <text>时间安排：</text>
+    <input type="text" placeholder="请输入时间安排" bindinput="inputTimeSchedule"/>
+  </view>
+  <view class="form-item">
+    <text>联系方式：</text>
+    <input type="text" placeholder="请输入联系方式" bindinput="inputContactInfo"/>
+  </view>
+  <view class="form-item">
+    <text>成员要求：</text>
+    <input type="text" placeholder="请输入成员要求" bindinput="inputMemberRequirements"/>
+  </view>
+  <view class="form-item">
+    <text>项目简介：</text>
+    <textarea placeholder="请输入项目简介" bindinput="inputProjectIntroduction"></textarea>
+  </view>
+  <view class="form-submit">
+    <button bindtap="submitProject">提交项目申请</button>
+  </view>
+</view>
+>>>>>>> dc40d99 (Initial Commit)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view class="forum-page">
   <view class="header">
     <text class="header-title">论坛</text>
@@ -20,3 +21,26 @@
 
   <button class="refresh-btn" bindtap="refreshPosts">刷新</button>
 </view>
+=======
+<!-- forum.wxml -->
+<view class="forum-page">
+  <view class="header">
+    <text class="header-title">论坛</text>
+  </view>
+
+  <view class="post-list">
+    <view class="post-item" wx:for="{{posts}}" wx:key="{{item._id}}">
+      <view class="post-title">{{item.id}}</view>
+      <view class="post-content">{{item.content}}</view>
+      <view class="post-date">{{item.date}}</view>
+    </view>
+  </view>
+
+  <view class="input-area">
+    <input class="input-field" placeholder="内容" bindinput="onContentInput" value="{{content}}" />
+    <button class="send-btn" bindtap="sendPost">发送</button>
+  </view>
+
+  <button class="refresh-btn" bindtap="refreshPosts">刷新</button>
+</view>
+>>>>>>> dc40d99 (Initial Commit)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <view class="chat-container">
   <scroll-view class="chat-content" scroll-y="true">
     <!-- 聊天内容 -->
@@ -12,4 +13,17 @@
     <input type="text" placeholder="输入消息" bindinput="handleInput"/>
     <view class="send-button" bindtap="sendMessage">发送</view>
   </view>
+=======
+<view class="chat-container">
+  <view class="chat-content">
+    <!-- 聊天内容 -->
+    <block wx:for="{{chatMessages}}" wx:key="index">
+      <view class="message-item">{{item}}</view>
+    </block>
+  </view>
+  <view class="input-area">
+    <input type="text" placeholder="输入消息" bindinput="handleInput"/>
+    <view class="send-button" bindtap="sendMessage">发送</view>
+  </view>
+>>>>>>> dc40d99 (Initial Commit)
 </view>

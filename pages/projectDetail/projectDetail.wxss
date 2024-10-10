@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 全局表单容器样式 */
 .form-container {
   padding: 20px;
@@ -42,3 +43,28 @@
   width: 30px;
   height: 30px;
 }
+=======
+/* 根据需要添加样式 */
+.project-detail {
+  padding: 20px;
+}
+
+.project-title {
+  font-size: 20px;
+  color: #333;
+}
+
+.project-type, .involved-majors, .schedule, .contact-info, .member-requirements, .project-introduction {
+  margin-top: 10px;
+}
+
+.discussion-btn, .join-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #0ba360;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+>>>>>>> dc40d99 (Initial Commit)

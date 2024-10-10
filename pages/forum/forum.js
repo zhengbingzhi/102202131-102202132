@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Page({
   data: {
     posts: [], // 用于存储帖子
@@ -93,3 +94,73 @@ Page({
     });
   }
 });
+=======
+wx.cloud.init({
+  env: "pzn-6gge7w8zf9cf192f", // 当前的云开发环境 ID
+});
+Page({
+  data: {
+    posts: [],
+    content: ''
+  },
+
+  onLoad: function() {
+    this.loadPosts();
+  },
+
+  loadPosts: function() {
+    const that = this;
+    wx.cloud.database().collection('forum').get({
+      success: function(res) {
+        // 将读取的数据存储在页面的data中
+        that.setData({
+          posts: res.data.reverse() // 假设我们想要按时间倒序显示帖子
+        });
+      },
+      fail: function(err) {
+        console.error(err);
+      }
+    });
+  },
+
+  onContentInput: function(e) {
+    this.setData({
+      content: e.detail.value
+    });
+  },
+
+  sendPost: function() {
+    const  {content } = this.data;
+    if (!content) {
+      wx.showToast({
+        title: '内容不能为空',
+        icon: 'none'
+      });
+      return;
+    }
+    wx.cloud.database().collection('forum').add({
+      data: {
+        content: content
+      },
+      success: function(res) {
+        wx.showToast({
+          title: '帖子发送成功'
+        });
+        // 发送成功后清空输入框
+        that.setData({
+          content: ''
+        });
+        // 刷新帖子列表
+        that.loadPosts();
+      },
+      fail: function(err) {
+        console.error(err);
+      }
+    });
+  },
+
+  refreshPosts: function() {
+    this.loadPosts();
+  },
+});
+>>>>>>> dc40d99 (Initial Commit)

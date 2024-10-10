@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 App({
   onLaunch() {
     // 小程序启动时的逻辑
@@ -20,4 +21,15 @@ App({
   }
 
 
+=======
+
+
+App({
+  onLaunch() {
+  
+  },
+  globalData: {
+    // 全局数据
+  }
+>>>>>>> dc40d99 (Initial Commit)
 });
