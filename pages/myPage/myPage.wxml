@@ -89,40 +89,44 @@
 =======
 <view class="user-info">
   <view class="avatar">
-    <image class="avatar-image" src="/images/default-avatar.png" mode="aspectFill"/>
+    <image class="avatar-image" src="images/default-avatar.png" mode="aspectFill"/>
   </view>
   <view class="personal-details">
-    <view class="student-id"> 
+    <view class="student-id">
       <text>学号</text>
-      <view >102202131</view>
+      <view>{{userInfo.studentId }}</view>
     </view>
-    <view class="name"> 
+    <view class="name">
       <text>姓名</text>
-      <view >张三</view>
+      <view>{{userInfo.name }}</view>
     </view>
-    <view class="major"> 
+    <view class="major">
       <text>专业</text>
-      <view >计算机科学与技术</view>
+      <view>{{userInfo.major}}</view>
     </view>
   </view>
 </view>
 
 <view class="contact-info">
-<view class="phone"> 
-  <text>电话</text>
-  <view >123-4567-8901</view>
-</view>
-<view class="email">
-  <text>邮箱</text>
-  <view>zhangsan@example.com</view>
-</view>
-<view class = "bio">
-  <text>简介</text>
-  <view>性格外向活泼，可以跟大部分人聊得来，随和，能融洽的处理自己的交友关系，喜欢帮助别人，有团队合作精神，也有独立解决事情的性格，虽然平时比较不正紧，但对于重要的是，会严肃面对，不拖拉，不懈怠，唯一不足就是有点懒惰。</view>
+  <view class="phone">
+    <text>电话</text>
+    <view>{{userInfo.phone}}</view>
+  </view>
+  <view class="email">
+    <text>邮箱</text>
+    <view>{{userInfo.email}}</view>
+  </view>
+  <view class="bio">
+    <text>简介</text>
+    <view>{{userInfo.bio}}</view>
+  </view>
 </view>
 
+<view class="settings-btn" bindtap="goToSettings">
+  <image src="images/settings.png"></image>
 </view>
 
+<<<<<<< HEAD
 <view class="projects-participated">参加项目</view>
 
 <view class="my-page">
@@ -134,3 +138,40 @@
   </view>
 </view>
 >>>>>>> dc40d99 (Initial Commit)
+=======
+<!-- 编辑个人信息的表单 -->
+<view wx:if="{{editMode}}">
+  <form bindsubmit="saveUserInfo">
+    <view class="personal-details">
+      <view class="student-id">
+        <text>学号</text>
+        <input name="studentId" value="{{userInfo.studentId}}" />
+      </view>
+      <view class="name">
+        <text>姓名</text>
+        <input name="name" value="{{userInfo.name}}" />
+      </view>
+      <view class="major">
+        <text>专业</text>
+        <input name="major" value="{{userInfo.major}}" />
+      </view>
+    </view>
+    <view class="contact-info">
+      <view class="phone">
+        <text>电话</text>
+        <input name="phone" value="{{userInfo.phone}}" />
+      </view>
+      <view class="email">
+        <text>邮箱</text>
+        <input name="email" value="{{userInfo.email}}" />
+      </view>
+      <view class="bio">
+        <text>简介</text>
+        <textarea name="bio" value="{{userInfo.bio}}"></textarea>
+      </view>
+    </view>
+    <button formType="submit">保存</button>
+  </form>
+</view>
+<button bindtap="joinedProject">参与的项目</button>
+>>>>>>> 90c2834 (none)

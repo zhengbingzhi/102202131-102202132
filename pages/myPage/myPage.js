@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const db = wx.cloud.database(); // 初始化数据库
 
 Page({
@@ -212,31 +213,101 @@ confirmParticipant: function() {
 });
 =======
 
+=======
+wx.cloud.init({
+  env: "pzn-6gge7w8zf9cf192f", // 当前的云开发环境 ID
+});
+const app = getApp()
+>>>>>>> 90c2834 (none)
 Page({
   data: {
     userInfo: {
-      avatar: "/images/default-avatar.png",
-      studentId: "123456",
-      name: "张三",
-      major: "计算机科学与技术"
+      studentId: '',
+      name: '',
+      major: '',
+      phone: '',
+      email: '',
+      bio: ''
     },
-    contactInfo: {
-      phone: "123-4567-8901",
-      email: "zhangsan@example.com",
-      bio: "这里可以写个人简介"
-    },
-    projectsParticipated: "项目A, 项目B"
+    editMode: false
   },
- // 跳转到设置页面
- goToSettings: function() {
-  wx.navigateTo({
-    url: '/pages/settings/settings'
-  });
-},
-  onLoad: function(options) {
-    // 页面加载时的逻辑
+
+  onLoad: function() {
+    this.loadUserInfo();
   },
+
+  loadUserInfo: function() {
+    const db = wx.cloud.database();
+    const user =app.globalData.user; // 确保已登录并获取用户信息
+    if (user) {
+      db.collection('personInfo').where({
+        user: user
+      }).get().then(res => {
+        if (res.data.length > 0) {
+          this.setData({
+            userInfo: res.data[0],
+            editMode: false
+          });
+        } else {
+          this.setData({
+            editMode: true
+          });
+        }
+      }).catch(err => {
+        console.error('加载用户信息失败', err);
+      });
+    }
+  },
+
+  goToSettings: function() {
+    this.setData({
+      editMode: true
+    });
+  },
+
+  saveUserInfo: function(e) {
+    const { studentId, name, major, phone, email, bio } = e.detail.value;
+    const db = wx.cloud.database();
+    db.collection('personInfo').add({
+      data: {
+        studentId,
+        name,
+        major,
+        phone,
+        email,
+        bio,
+        user: app.globalData.user // 确保保存用户字段
+      }
+    }).then(() => {
+      wx.showToast({
+        title: '信息更新成功',
+        icon: 'success'
+      });
+      this.setData({
+        userInfo: {
+          studentId,
+          name,
+          major,
+          phone,
+          email,
+          bio
+        },
+        editMode: false
+      });
+    }).catch(err => {
+      console.error('更新信息失败', err);
+    });
+  },
+<<<<<<< HEAD
   
   // 其他逻辑函数...
 });
 >>>>>>> dc40d99 (Initial Commit)
+=======
+  joinedProject() {
+    wx.navigateTo({
+      url: '/pages/joinedProject/joinedProject' // 确保路径正确
+    });
+  }
+});
+>>>>>>> 90c2834 (none)

@@ -121,6 +121,7 @@ wx.cloud.init({
 });
 const client = init(wx.cloud);
 const models = client.models; 
+const app = getApp()
 Page({
   data: {
     username: '',
@@ -195,6 +196,7 @@ Page({
       .then((ret) => {
         for (let i = 0; i < ret.data.records.length; i++) {
           if(this.data.username == ret.data.records[i].user && this.data.password == ret.data.records[i].password) {
+            app.globalData.user = ret.data.records[i].user
             wx.switchTab({
               url: '/pages/homePage/homePage', // 注意这里的路径需要是完整的
             })

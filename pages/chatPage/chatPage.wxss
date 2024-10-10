@@ -81,34 +81,81 @@
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
 }
 
 .chat-content {
   flex: 1;
   padding: 10px;
+  background-color: #f0f0f0;
   overflow-y: scroll;
 }
 
 .message-item {
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.input-area {
+.message-content {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.my-message {
+  justify-content: flex-end;
+}
+
+.other-message {
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.my-avatar {
+  order: 2;
+  margin-left: 10px;
+}
+
+.other-avatar {
+  margin-right: 10px;
+}
+
+.input-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-top: 1px solid #eee;
   display: flex;
   padding: 10px;
-  background-color: #fff;
+}
+
+.input-fixed input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
 }
 
 .send-button {
-  flex: 1;
-  margin-left: 10px;
   background-color: #0ba360;
   color: #fff;
   text-align: center;
   line-height: 50px;
+<<<<<<< HEAD
 >>>>>>> dc40d99 (Initial Commit)
+=======
+  padding: 0 20px;
+  border-radius: 5px;
+>>>>>>> 90c2834 (none)
 }

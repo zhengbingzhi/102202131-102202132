@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <view class="forum-page">
   <view class="header">
     <text class="header-title">论坛</text>
@@ -33,14 +34,38 @@
       <view class="post-title">{{item.id}}</view>
       <view class="post-content">{{item.content}}</view>
       <view class="post-date">{{item.date}}</view>
+=======
+<view class="container">
+  <view class="posts-area">
+    <block wx:for="{{forumPosts}}" wx:key="id">
+      <view class="post-item">
+        <text class="post-author">{{item.author}}:</text>
+        <text class="post-content">{{item.content}}</text>
+      </view>
+    </block>
+    <view wx:if="{{forumPosts.length === 0}}" class="no-posts">
+      暂无帖子信息
+>>>>>>> 90c2834 (none)
     </view>
   </view>
-
+  
   <view class="input-area">
-    <input class="input-field" placeholder="内容" bindinput="onContentInput" value="{{content}}" />
-    <button class="send-btn" bindtap="sendPost">发送</button>
+    <textarea 
+      class="post-content"
+      placeholder="输入帖子内容"
+      bindinput="handleInput"
+      value="{{content}}"
+    />
+    <view class="button-group">
+      <button bindtap="loadForumPosts">刷新</button>
+      <button class="post-button" bindtap="postMessage">发帖</button>
+    </view>
   </view>
+<<<<<<< HEAD
 
   <button class="refresh-btn" bindtap="refreshPosts">刷新</button>
 </view>
 >>>>>>> dc40d99 (Initial Commit)
+=======
+</view>
+>>>>>>> 90c2834 (none)

@@ -44,10 +44,9 @@
 <view class="search-bar">
   <input class="search-input" type="text" placeholder="搜索" bindinput="handleInput"/>
   <!-- 修复: 使用 bindtap="handleSearch" 而非 onSearch -->
-  <image class="image-style" src="image/search.png" mode="aspectFit" hover-class="image-hover" bindtap="handleSearch"></image>
+  <image class="image-style" src="image/search.jpg" mode="aspectFit" hover-class="image-hover" bindtap="handleSearch"></image>
   <view class="add-button" bindtap="goToAddProjectPage">+</view>
 </view>
-
 
 <!-- 部分分类栏 -->
 <view class="category-row">
@@ -62,19 +61,35 @@
 
 <!-- 项目栏 -->
 <view class="project-section">
-  <block wx:if="{{searchResults.length > 0}}">
-    <view class="project-item" wx:for="{{searchResults}}" wx:key="{{index}}" bindtap="handleProjectTap" data-index="{{index}}">
+  <!-- 当isCategory为false时，显示项目列表 -->
+  <block wx:if="{{!isCategory && allCategory.length > 0}}">
+    <view class="project-item" wx:for="{{allCategory}}" wx:key="{{index}}" bindtap="handleProjectTap" data-index="{{index}}">
       <view class="project-square"></view>
-      <text class="project-title">{{item.title}}</text>
+      <text class="project-title">{{item.projectName}}</text>
     </view>
   </block>
-  <block wx:else>
-    <text class="no-results">未找到匹配内容</text>
-  </block>
+ 
 </view>
+
+<view class="project-section">
+  <!-- 当isCategory为false时，显示项目列表 -->
+  <block wx:if="{{isCategory && searchResults.length > 0}}">
+    <view class="project-item" wx:for="{{searchResults}}" wx:key="{{index}}" bindtap="handleProjectTap" data-index="{{index}}">
+      <view class="project-square"></view>
+      <text class="project-title">{{item.projectName}}</text>
+    </view>
+  </block>
+ 
+</view>
+<!-- 刷新按钮，位于页面左下角 -->
+<image class="refresh-image" src="image/OIP.jpg" mode="aspectFit" bindtap="handleRefreshTap"></image>
 
 <!-- 主页内容 -->
 <view class="content">
   <!-- 这里是其他内容 -->
 </view>
+<<<<<<< HEAD
 >>>>>>> dc40d99 (Initial Commit)
+=======
+
+>>>>>>> 90c2834 (none)

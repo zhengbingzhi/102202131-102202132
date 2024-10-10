@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Page({
   data: {
     posts: [], // 用于存储帖子
@@ -98,65 +99,77 @@ Page({
 wx.cloud.init({
   env: "pzn-6gge7w8zf9cf192f", // 当前的云开发环境 ID
 });
+=======
+const app = getApp()
+>>>>>>> 90c2834 (none)
 Page({
   data: {
-    posts: [],
-    content: ''
+    content: '',
+    forumPosts: []
   },
 
   onLoad: function() {
-    this.loadPosts();
+    this.loadForumPosts();
   },
 
-  loadPosts: function() {
-    const that = this;
-    wx.cloud.database().collection('forum').get({
-      success: function(res) {
-        // 将读取的数据存储在页面的data中
-        that.setData({
-          posts: res.data.reverse() // 假设我们想要按时间倒序显示帖子
-        });
-      },
-      fail: function(err) {
-        console.error(err);
-      }
+  loadForumPosts: function() {
+    const db = wx.cloud.database();
+    db.collection('forum').get().then(res => {
+      this.setData({
+        forumPosts: res.data.reverse() // 将帖子按时间倒序排列
+      });
+    }).catch(err => {
+      console.error('加载帖子失败', err);
+      wx.showToast({
+        title: '加载失败',
+        icon: 'none'
+      });
     });
   },
 
-  onContentInput: function(e) {
+  handleInput: function(e) {
     this.setData({
       content: e.detail.value
     });
   },
 
-  sendPost: function() {
-    const  {content } = this.data;
-    if (!content) {
+  postMessage: function() {
+    if (!this.data.content.trim()) {
       wx.showToast({
         title: '内容不能为空',
         icon: 'none'
       });
       return;
     }
-    wx.cloud.database().collection('forum').add({
+    
+    const db = wx.cloud.database();
+    const content = this.data.content;
+    const author = app.globalData.user; // 使用全局变量中的用户名
+
+    db.collection('forum').add({
       data: {
-        content: content
-      },
-      success: function(res) {
-        wx.showToast({
-          title: '帖子发送成功'
-        });
-        // 发送成功后清空输入框
-        that.setData({
-          content: ''
-        });
-        // 刷新帖子列表
-        that.loadPosts();
-      },
-      fail: function(err) {
-        console.error(err);
+        author,
+        content,
+        time: new Date().toLocaleString()
       }
+    }).then(res => {
+      console.log('帖子发布成功', res);
+      this.loadForumPosts(); // 重新加载帖子列表
+      this.setData({
+        content: '' // 清空输入框
+      });
+      wx.showToast({
+        title: '发帖成功',
+        icon: 'success'
+      });
+    }).catch(err => {
+      console.error('发帖失败', err);
+      wx.showToast({
+        title: '发帖失败',
+        icon: 'none'
+      });
     });
+<<<<<<< HEAD
   },
 
   refreshPosts: function() {
@@ -164,3 +177,7 @@ Page({
   },
 });
 >>>>>>> dc40d99 (Initial Commit)
+=======
+  }
+});
+>>>>>>> 90c2834 (none)

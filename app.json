@@ -51,21 +51,21 @@
 =======
 {
   "pages": [
-    
     "pages/loginRegisterPage/loginRegisterPage",
-    "pages/mainPage/mainPage",
-    "pages/messagePage/messagePage",
     "pages/homePage/homePage",
+    "pages/mainPage/mainPage",
+    "pages/text/text",
+    "pages/messagePage/messagePage",
     "pages/myPage/myPage",
     "pages/projectDetail/projectDetail",
     "pages/addProject/addProject",
     "pages/chatPage/chatPage",
     "pages/discussionArea/discussionArea",
-    "pages/settings/settings",
     "pages/forgotPassword/forgotPassword",
-    "pages/my/my",
     "pages/collectionPage/collectionPage",
-    "pages/forum/forum"  
+    "pages/forum/forum",
+    "pages/projectResults/projectResults",
+    "pages/joinedProject/joinedProject"
   ],
   "window": {
     "navigationBarTitleText": "专业项目交流小程序"

@@ -23,13 +23,13 @@ App({
 
 =======
 
-
 App({
-  onLaunch() {
   
+  onLaunch() {
   },
   globalData: {
-    // 全局数据
+    user : '',
+    currentProjectName : ''
   }
 >>>>>>> dc40d99 (Initial Commit)
 });

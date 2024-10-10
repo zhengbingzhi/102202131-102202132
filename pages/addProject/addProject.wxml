@@ -76,7 +76,10 @@
     <textarea placeholder="请输入项目简介" bindinput="inputProjectIntroduction"></textarea>
   </view>
   <view class="form-submit">
-    <button bindtap="submitProject">提交项目申请</button>
+    <button bindtap="submitProject">添加项目</button>
   </view>
 </view>
+<<<<<<< HEAD
 >>>>>>> dc40d99 (Initial Commit)
+=======
+>>>>>>> 90c2834 (none)

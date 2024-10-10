@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Page({
   data: {
     project: {
@@ -183,40 +184,64 @@ Page({
   }
 });
 =======
+=======
+// 假设这是你的页面的 JavaScript 部分
+const app =getApp()
+>>>>>>> 90c2834 (none)
 Page({
   data: {
-    project: {},
-    scheduleOptions: ['2024-01', '2024-02', '2024-03', '2024-04', '2024-05', '2024-06', '2024-07', '2024-08', '2024-09', '2024-10', '2024-11', '2024-12']
+    project: {
+      projectName: '',
+      type: '',
+      majors: '',
+      schedule: '',
+      contact: '',
+      requirements: '',
+      introduction: ''
+    }
   },
 
   onLoad: function(options) {
-    console.log("Received options:", options);
-    const project = {
-      id: options.id,
-      title: decodeURIComponent(options.title || ''),
-      type: decodeURIComponent(options.type || ''),
-      majors: decodeURIComponent(options.majors || ''),
-      schedule: decodeURIComponent(options.schedule || ''),
-      contact: decodeURIComponent(options.contact || ''),
-      requirements: decodeURIComponent(options.requirements || ''),
-      introduction: decodeURIComponent(options.introduction || '')
-    };
-    this.setData({
-      project: project
-    });
+    // 页面加载时获取云数据库中的项目数据
+    this.getProjectData();
   },
-  goToDiscussion: function() {
-    wx.navigateTo({
-      url: '/pages/discussionArea/discussionArea?id=' + this.data.project.id
+
+  getProjectData: function() {
+    // 调用云数据库API获取数据
+    const db = wx.cloud.database();
+
+    db.collection('project').where({
+      projectName: app.globalData.currentProjectName
+    }).get({
+      success: res => {
+        console.log(res.data[0].projectName)
+        this.setData({
+          project: {
+            projectName: res.data[0].projectName,
+            type: res.data[0].projectType,
+            majors: res.data[0].majorsRequired,
+            schedule: res.data[0].timeSchedule,
+            contact: res.data[0].contactInfo,
+            requirements: res.data[0].memberRequirements,
+            introduction: res.data[0].projectIntroduction
+          }
+        });
+      },
+      fail: err => {
+        // 数据获取失败的处理
+        console.error("获取项目数据失败：", err);
+      }
     });
   },
 
   applyToJoin: function() {
-    wx.showToast({
-      title: '申请已发送',
-      icon: 'success',
-      duration: 2000
-    });
+    // 申请加入的逻辑
+    console.log('申请加入按钮被点击');
+  },
+
+  goToDiscussion: function() {
+    // 进入讨论区的逻辑
+    console.log('进入讨论区按钮被点击');
   }
 });
 >>>>>>> dc40d99 (Initial Commit)

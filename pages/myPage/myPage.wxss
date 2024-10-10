@@ -132,7 +132,8 @@
 .student-id, .name, .major {
   display: flex;
   box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  
 }
 .personal-details view{
   margin-left:10px;
@@ -141,17 +142,17 @@
 .personal-details text{
   white-space: nowrap;
 }
-
 .contact-info {
   padding: 5px;
   width: 90%;
 }
 
-.phone, .email, .bio {
+.phone, .email,.bio{
   display: flex;
   box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
   margin-bottom: 10px;
 }
+
 .contact-info view,textarea{
   margin-left:10px;
 }
@@ -177,4 +178,15 @@
   height: 20px;
   width: 20px;
 }
+<<<<<<< HEAD
 >>>>>>> dc40d99 (Initial Commit)
+=======
+button {
+  background-color: #196aad; /* 按钮背景颜色 */
+  color: white; /* 按钮文字颜色 */
+  padding: 10px 0; /* 按钮内边距 */
+  font-size: 16px; /* 按钮字体大小 */
+  border-radius: 5px; /* 按钮圆角 */
+  margin-bottom: 5px;
+}
+>>>>>>> 90c2834 (none)

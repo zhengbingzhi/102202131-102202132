@@ -1,3 +1,4 @@
+<<<<<<< HEAD:pages/my/my.js
 <<<<<<< HEAD
 
 Page({
@@ -29,6 +30,9 @@ Page({
 });
 =======
 // pages/my/my.js
+=======
+// pages/test/test.js
+>>>>>>> 90c2834 (none):pages/test/test.js
 Page({
 
   /**

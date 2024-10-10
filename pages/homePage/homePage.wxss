@@ -223,10 +223,9 @@
 .project-title {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  width: 95%;
   padding: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(53, 36, 36, 0.5);
   color: #fff;
   text-align: center;
 }
@@ -243,4 +242,18 @@
 .content {
   padding: 10px;
 }
+<<<<<<< HEAD
 >>>>>>> dc40d99 (Initial Commit)
+=======
+
+/* 刷新按钮样式 */
+.refresh-image {
+  position: fixed; /* 固定位置 */
+  left: 10px;      /* 距离左侧10px */
+  bottom: 10px;    /* 距离底部10px */
+  width: 50px;     /* 图片宽度 */
+  height: 50px;    /* 图片高度 */
+  cursor: pointer; /* 鼠标悬停时显示为可点击 */
+}
+
+>>>>>>> 90c2834 (none)
