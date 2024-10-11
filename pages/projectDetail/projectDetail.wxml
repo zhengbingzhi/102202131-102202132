@@ -28,27 +28,11 @@
     <text>{{project.introduction}}</text>
   </view>
 
-  <!-- 新增的参与者显示 -->
-  <view class="form-item">
-    <text>参与者：</text>
-    <view>
-      <!-- 使用三元运算符判断是否为最后一项，决定是否加逗号 -->
-      <block wx:for="{{project.participants}}" wx:key="index">
-        <text>{{item}}{{index < project.participants.length - 1 ? ', ' : ''}}</text>
-      </block>
-    </view>
-  </view>
-
   <!-- "申请加入" 按钮 -->
   <view class="form-submit">
     <button class="join-btn" bindtap="applyToJoin">申请加入</button>
   </view>
 
-  <!-- "讨论区" 按钮 -->
-  <view class="form-submit">
-    <button class="discussion-btn" bindtap="goToDiscussion">进入讨论区</button>
-  </view>
-
-  <!-- 收藏按钮放到右上角，使用图片 -->
-  <image class="collect-icon" src="image/collection.jpg" bindtap="handleCollectClick" />
+  <!-- 收藏按钮放到右下角，使用图片 -->
+  <image class="collect-icon" src="images/collection.jpg" bindtap="handleCollectClick" />
 </view>

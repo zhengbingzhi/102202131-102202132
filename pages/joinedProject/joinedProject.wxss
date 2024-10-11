@@ -1,0 +1,31 @@
+.container {
+  padding: 15px;
+}
+
+.project-list {
+  margin-top: 30px;
+}
+
+.project-item {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.project-item,
+.project-name,
+.project-type,
+.majors-required,
+.time-schedule,
+.contact-info,
+.member-requirements,
+.projectIntroduction {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+

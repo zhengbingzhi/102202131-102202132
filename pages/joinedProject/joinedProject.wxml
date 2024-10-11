@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="project-list">
+    <block wx:for="{{projects}}" wx:key="id">
+      <view class="project-item" bindtap="goToProjectDetail" data-id="{{item.id}}">
+        <text class="project-name">名字:{{item.projectName}}</text>
+        <text class="project-type">类型:{{item.projectType}}</text>
+        <text class="majors-required">所需专业:{{item.majorsRequired}}</text>
+        <text class="time-schedule">时间安排:{{item.timeSchedule}}</text>
+        <text class="contact-info">联系方式:{{item.contactInfo}}</text>
+        <text class="member-requirements">成员要求:{{item.memberRequirements}}</text>
+        <text class="projectIntroduction">简介:{{item.projectIntroduction}}</text>
+      </view>
+    </block>
+    <view wx:if="{{projects.length === 0}}" class="no-projects">
+      暂无项目信息
+    </view>
+  </view>
+</view>

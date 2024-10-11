@@ -1,106 +1,80 @@
-/* 用户信息栏样式 */
 .user-info {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  height: 33%; /* 占屏幕的1/3 */
   padding: 20px;
-  background-color: #ffa500; /* 橙黄色背景 */
-  position: relative; /* 相对定位，确保编辑按钮相对于它定位 */
+  background-color: #f8f8f8;
 }
 
 .avatar {
-  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .avatar-image {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%; /* 圆形 */
   border: 1px solid #ddd; /* 边框 */
 }
 
 .personal-details {
-  text-align: center;
+  padding: 5px;
+  width: 90%;
 }
 
 .student-id, .name, .major {
-  margin-bottom: 10px;
-}
-
-.menu {
   display: flex;
-  flex-direction: column;
-  padding: 20px;
+  box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
+  margin-bottom: 15px;
+  
+}
+.personal-details view{
+  margin-left:10px;
+  width: 90%;
+}
+.personal-details text{
+  white-space: nowrap;
+}
+.contact-info {
+  padding: 5px;
+  width: 90%;
 }
 
-.menu-item {
+.phone, .email,.bio{
+  display: flex;
+  box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
   margin-bottom: 10px;
-  cursor: pointer;
-  background-color: #f8f8f8;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 16px;
-  color: #333;
 }
 
-/* 退出账户按钮的样式 */
-.menu-item.logout {
-  color: red;
-  font-weight: bold;
+.contact-info view,textarea{
+  margin-left:10px;
+}
+.contact-info text{
+  white-space: nowrap;
 }
 
-/* 编辑按钮样式 */
-.edit-btn {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+.projects-participated {
+  margin-left: 15px ;
+  width: 87.5%;
+  padding-bottom: 280px;
+  box-shadow: 0 0 10px rgba(145, 46, 46, 0.2);
 }
-
-.icon-button {
-  width: 40px;
-  height: 40px;
-}
+/* 其他样式 */
 
 .settings-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-/* 模态框样式 */
-.modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
 }
-
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 80%;
+.settings-btn image {
+  height: 20px;
+  width: 20px;
 }
-
-.modal-header, .modal-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.project-list .project-item {
-  margin-bottom: 10px;
+button {
+  background-color: #196aad; /* 按钮背景颜色 */
+  color: white; /* 按钮文字颜色 */
+  padding: 10px 0; /* 按钮内边距 */
+  font-size: 16px; /* 按钮字体大小 */
+  border-radius: 5px; /* 按钮圆角 */
+  margin-bottom: 5px;
 }

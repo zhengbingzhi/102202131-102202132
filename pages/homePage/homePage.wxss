@@ -42,6 +42,51 @@
   cursor: pointer;
 }
 
+/* 最近搜索记录样式 */
+.recent-searches {
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.recent-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.recent-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: #ff0000; /* 删除图标为红色 */
+}
+
+/* 猜你想搜标签样式 */
+.suggested-tags {
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.suggested-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.tag-item {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
 /* 分类栏样式 */
 .category-row {
   display: flex;
@@ -67,6 +112,15 @@
   cursor: pointer;
 }
 
+
+
+/* 无结果提示样式 */
+.no-results {
+  text-align: center;
+  margin-top: 20px;
+  color: #999;
+  font-size: 16px;
+}
 /* 项目栏样式 */
 .project-section {
   display: flex;
@@ -80,34 +134,24 @@
   margin-bottom: 20px;
   position: relative;
   cursor: pointer;
+  background-size: cover; /* 使背景图像覆盖整个项目项 */
+  background-position: center; /* 将背景图像居中显示 */
+
+  border-radius: 5px; /* 添加圆角 */
+  height: 150px; /* 设置项目项的高度 */
+ 
 }
 
-.project-square {
-  width: 100%;
-  height: 0;
-  padding-bottom: 100%; /* 正方形的关键 */
-  background-color: #ddd;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
+/* 项目标题样式 */
 .project-title {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  width: 80%;
+  margin-left: 10px;
   padding: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(53, 36, 36, 0.5); /* 背景色保持透明度 */
   color: #fff;
   text-align: center;
-}
-
-/* 无结果提示样式 */
-.no-results {
-  text-align: center;
-  margin-top: 20px;
-  color: #999;
-  font-size: 16px;
 }
 
 /* 主页内容样式 */

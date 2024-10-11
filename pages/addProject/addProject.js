@@ -1,3 +1,5 @@
+const app = getApp()
+const db = wx.cloud.database(); // 获取数据库引用
 Page({
   data: {
     projectName: '',
@@ -6,10 +8,7 @@ Page({
     timeSchedule: '',
     contactInfo: '',
     memberRequirements: '',
-    projectIntroduction: '',
-    publisher: '',       // 新增发布者
-    participants: [],    // 将参与者设置为数组
-    participantsInput: '' // 新增参与者输入
+    projectIntroduction: ''
   },
 
   // 输入处理函数
@@ -34,48 +33,14 @@ Page({
   inputProjectIntroduction: function(e) {
     this.setData({ projectIntroduction: e.detail.value });
   },
-  inputPublisher: function(e) {
-    this.setData({ publisher: e.detail.value });  // 处理发布者输入
-  },
-  inputParticipants: function(e) {
-    this.setData({ participantsInput: e.detail.value });  // 处理参与者输入
-  },
 
-  // 添加参与者
-  addParticipant: function() {
-    const applicantInfo = this.data.participantsInput.trim(); // 获取输入的参与者信息
-
-    if (applicantInfo) {
-      // 更新参与者数组
-      const updatedParticipants = [...this.data.participants, applicantInfo];
-      this.setData({
-        participants: updatedParticipants,
-        participantsInput: '' // 清空输入框
-      });
-
-      // 弹出提示
-      wx.showToast({
-        title: '添加成功',
-        icon: 'success',
-        duration: 2000 // 持续时间，单位为毫秒
-      });
-
-      console.log("更新后的参与者：", updatedParticipants);
-    } else {
-      wx.showToast({
-        title: '请输入有效的参与者信息',
-        icon: 'none',
-        duration: 2000
-      });
-    }
-  },
 
   // 提交项目
   submitProject: function() {
-    console.log("开始提交项目...");
+   
     if (this.validateInput()) {
-      const db = wx.cloud.database(); // 获取数据库引用
       let projectData = {
+        user : app.globalData.user,
         projectName: this.data.projectName,
         projectType: this.data.projectType,
         majorsRequired: this.data.majorsRequired,
@@ -83,27 +48,20 @@ Page({
         contactInfo: this.data.contactInfo,
         memberRequirements: this.data.memberRequirements,
         projectIntroduction: this.data.projectIntroduction,
-        publisher: this.data.publisher,           // 保存发布者信息
-        participants: this.data.participants,     // 保存参与者信息
-        createdAt: new Date() // 添加创建时间
+        participator : []
       };
-
-      console.log("准备存储数据：", projectData);
-
-      // 存储到数据库
       db.collection('project').add({
         data: projectData,
         success: function(res) {
+
           wx.showToast({
             title: '提交成功',
             icon: 'success',
             duration: 2000
           });
-          console.log("提交成功：", res);
           wx.navigateBack(); // 返回上一页
         },
         fail: function(error) {
-          console.error("提交失败: ", error);
           wx.showToast({
             title: '提交失败，请重试',
             icon: 'none',
@@ -113,7 +71,6 @@ Page({
       });
     }
   },
-
   // 输入验证
   validateInput: function() {
     let { projectName, projectType, majorsRequired, timeSchedule, contactInfo, memberRequirements, projectIntroduction, publisher } = this.data;
@@ -168,14 +125,6 @@ Page({
       });
       isValid = false;
     }
-    if (!publisher.trim()) {
-      wx.showToast({
-        title: '请输入学号-姓名-专业-联系方式',
-        icon: 'none',
-      });
-      isValid = false;
-    }
-
     return isValid;
   },
 });

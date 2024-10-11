@@ -12,13 +12,16 @@
   margin-bottom: 10px;
 }
 
-.form-item input,
-.form-item textarea {
-  width: 100%;
+.form-item input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;
+  
+}
+.form-item textarea {
+  border: 1px solid #ccc;
+  width: 99%;
+  border-radius: 5px;
 }
 
 .form-submit {

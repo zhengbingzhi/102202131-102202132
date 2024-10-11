@@ -2,6 +2,7 @@
 .form-container {
   padding: 20px;
   background-color: #f9f9f9;
+  position: relative; /* 确保父容器有 relative */
 }
 
 /* 每个表单项的样式 */
@@ -13,19 +14,13 @@
   align-items: center;
 }
 
-/* 参与者部分样式 */
-.form-item text {
-  margin-right: 5px;
-}
-
 /* 按钮样式 */
 .form-submit {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 /* 加入按钮样式 */
-.join-btn,
-.discussion-btn {
+.join-btn {
   background-color: #007aff;
   color: white;
   padding: 10px 20px;
@@ -34,11 +29,12 @@
   text-align: center;
 }
 
-/* 收藏按钮的图片样式，并放置在右上角 */
+/* 收藏按钮的图片样式，并放置在右下角 */
 .collect-icon {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 10px;  /* 右下角：从底部距离 10px */
+  right: 10px;   /* 从右边距离 10px */
   width: 30px;
   height: 30px;
+  z-index: 999;  /* 确保按钮在最前面 */
 }

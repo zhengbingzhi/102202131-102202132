@@ -27,20 +27,7 @@
     <text>项目简介：</text>
     <textarea placeholder="请输入项目简介" bindinput="inputProjectIntroduction"></textarea>
   </view>
-  
-  <view class="form-item">
-    <text>发布者：</text>
-    <input type="text" placeholder="学号-姓名-专业-联系方式" bindinput="inputPublisher"/>
-  </view>
-  
-  <!-- 参与者输入 -->
-  <view class="form-item">
-    <text>参与者：</text>
-    <input type="text" placeholder="请输入参与者信息" bindinput="inputParticipants" />
-    <button bindtap="addParticipant">添加参与者</button>
-  </view>
-
   <view class="form-submit">
-    <button bindtap="submitProject">提交项目申请</button>
+    <button bindtap="submitProject">添加项目</button>
   </view>
 </view>
